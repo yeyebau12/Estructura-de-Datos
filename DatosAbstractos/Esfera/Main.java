@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Esfera sphere = new Esfera(4);
+        Esfera sphere = new Esfera(5);
 
         System.out.println("Radio: " + sphere.getRadio());
         System.out.println("Diametro: " + sphere.getDiameter());
