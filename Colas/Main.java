@@ -28,7 +28,7 @@ public class Main {
         // Obtener la cabeza de la cola
         Trabajo cabeza = cola.obtenerCabeza();
         if (cabeza != null) {
-            System.out.println("Cabeza de la cola: " + cabeza.getTitulo() + " por " + cabeza.getAutor());
+            System.out.println("Cabeza de la cola : " + cabeza.getTitulo() + " por " + cabeza.getAutor());
         }
 
         // Eliminar un trabajo
