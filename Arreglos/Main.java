@@ -20,7 +20,7 @@ public class Main {
 
         for (i = 0; i < numbers.length; i++) {
             numbers[i] = Integer
-                    .parseInt(JOptionPane.showInputDialog(null, "Ingresa el elemento del indice : " + i)); // Asignar
+                    .parseInt(JOptionPane.showInputDialog(null, "Ingresa el elemento del indice: " + i)); // Asignar
         }
 
         // Mostrar los elementos del arreglo
