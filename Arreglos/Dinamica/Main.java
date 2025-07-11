@@ -20,7 +20,7 @@ public class Main {
 
         do {
 
-            phrases = JOptionPane.showInputDialog(null, "Ingrese una frase");
+            phrases = JOptionPane.showInputDialog(null, "Ingrese una frase: ");
             // agregar la frase al ArrayList
             chains.add(phrases);
             // preguntar si desea ingresar otra frase
