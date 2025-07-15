@@ -10,9 +10,16 @@ public class main {
         // El factorial de 0 se define como 1: 0! = 1
 
         Factorial factorial = new Factorial();
+        Fibonacci fibonacci = new Fibonacci();
 
         System.out.println("Factorial de 5 : " + "\n" + factorial.recursiveFactorial(5)); // 120
-
+        System.out.println("***************************************************************");
+        System.out.println("Fibonacci de 12 : " + "\n" + fibonacci.recursiveFibonacci(12)); // 55
+        System.out.println("Fibonacci de 20 : " + "\n" + fibonacci.recursiveFibonacci(1)); // 6765
+        System.out.println("Fibonacci de 30 : " + "\n" + fibonacci.recursiveFibonacci(30)); // 832040
+        System.out.println("***************************************************************");
+        System.out.println("Fibonacci de 12 con ciclo : " + "\n" + fibonacci.iterativeFibonacci(12)); // 144
+        System.out.println("Fibonacci de 20 con ciclo : " + "\n" + fibonacci.iterativeFibonacci(20)); // 6765
     }
 
 }
