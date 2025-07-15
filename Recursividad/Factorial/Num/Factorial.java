@@ -27,4 +27,24 @@ public class Factorial {
 
     }
 
+    /**
+     * Creando un metodo factorial mediante un ciclo
+     */
+    public int factorialCycle(int n) {
+
+        int fact = 1;
+        if (n < 0) {
+            return 0;
+
+        } else {
+
+            while (n != 0) {
+                fact = n * fact; // multiplicando el valor de n por el factorial
+                n--; // decrementando el valor de n
+            }
+            return fact; // devolviendo el factorial
+        }
+
+    }
+
 }
