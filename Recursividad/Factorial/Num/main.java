@@ -2,7 +2,7 @@ package Recursividad.Factorial.Num;
 
 public class main {
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
         // El factorial de un número n se define como el producto de todos los números
         // enteros positivos desde 1 hasta n.
