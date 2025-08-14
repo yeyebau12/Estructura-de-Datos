@@ -13,9 +13,11 @@ public class Main {
             try {
                 option = Integer.parseInt(JOptionPane.showInputDialog(null,
                         "1. Agregar un elemento al inicio de la lista \n2. Agregar un elemento al final de la lista\n"
-                                + "3. Mostrar los datos de la lista\n "
+                                + "3. Mostrar los datos de la lista\n"
                                 + "4. Eliminar el primer elemento de la lista\n"
-                                + "5. Salir",
+                                + "5. Eliminar un elemento del final de la lista\n"
+                                + "6. Eliminar un elemento en especifico\n"
+                                + "7. Salir",
                         "Menú de Opciones", 3));
 
                 switch (option) {
@@ -57,8 +59,41 @@ public class Main {
                                 "Eliminando nodo del inicio", JOptionPane.INFORMATION_MESSAGE);
 
                         break;
-
                     case 5:
+                        value = list.deleteEnd(); // Elimina el último elemento de la lista
+                        // Muestra un mensaje con el valor eliminado
+                        JOptionPane.showMessageDialog(null, "El valor eliminado es: " + value,
+                                "Eliminando nodo del final", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+
+                    case 6:
+                        try {
+                            value = Integer.parseInt(
+                                    JOptionPane.showInputDialog(null, "Ingrese el elemento que desea eliminar:",
+                                            "Eliminar nodo", 3));
+
+                            int result = list.deleteNode(value); // Elimina el nodo con el valor especificado
+
+                            // Muestra un mensaje con el valor eliminado
+                            if (result == 00) {
+                                JOptionPane.showMessageDialog(null, "El nodo fue eliminado exitosamente.",
+                                        "Eliminar nodo", JOptionPane.INFORMATION_MESSAGE);
+                            } else if (result == -1) {
+                                JOptionPane.showMessageDialog(null, "El nodo no fue encontrado.",
+                                        "Eliminar nodo", JOptionPane.WARNING_MESSAGE);
+                            } else if (result == -2) {
+                                JOptionPane.showMessageDialog(null, "La lista está vacía.",
+                                        "Eliminar nodo", JOptionPane.ERROR_MESSAGE);
+                            }
+
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(null,
+                                    "Por favor, ingrese un número válido." + e.getMessage());
+                        }
+
+                        break;
+
+                    case 7:
                         JOptionPane.showMessageDialog(null, "Saliendo del programa...");
                         break;
 
@@ -72,7 +107,7 @@ public class Main {
                 System.out.println("Error: " + e.getMessage());
             }
 
-        } while (option != 5); // Continúa hasta que el usuario elija salir
+        } while (option != 7); // Continúa hasta que el usuario elija salir
 
     }
 

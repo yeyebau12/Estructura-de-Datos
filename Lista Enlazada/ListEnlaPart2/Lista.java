@@ -56,4 +56,65 @@ public class Lista {
         return value; // Retorna el valor del nodo eliminado
     }
 
+    // Metodo para eliminar un nodo del final
+    public int deleteEnd() {
+        int value = end.data; // Guarda el valor del nodo a eliminar
+
+        if (start == end) {
+
+            start = end = null; // Si la lista queda vacía, actualiza el inicio y fin a nulo
+        } else {
+            Nodo temporary = start; // Crea un nodo temporal para recorrer la lista
+
+            while (temporary.next != end) {
+
+                temporary = temporary.next;
+            }
+            end = temporary; // Actualiza el fin al nodo anterior
+            end.next = null; // Elimina la referencia al último nodo
+        }
+
+        return value; // Retorna el valor del nodo eliminado
+    }
+
+    // Metodo para eliminar un nodo especifico
+    public int deleteNode(int value) {
+
+        if (!isEmpty()) {
+            if (start == end && value == start.data) {
+                start = end = null; // Si el único nodo es el que se quiere eliminar, vacía la lista
+
+            } else if (value == start.data) {
+                start = start.next; // Si el nodo a eliminar es el inicio, avanza al siguiente nodo
+            } else {
+
+                Nodo before, temporary;
+                before = start; // Nodo anterior al que se va a eliminar
+                temporary = start.next; // Nodo actual que se va a revisar
+
+                while (temporary != null && temporary.data != value) {
+
+                    before = before.next; // Avanza al siguiente nodo
+                    temporary = temporary.next; // Avanza al siguiente nodo
+
+                }
+                if (temporary != null) {
+                    before.next = temporary.next; // Elimina el nodo de la lista
+
+                    if (temporary == end) {
+                        end = before; // Si se eliminó el último nodo, actualiza el fin
+                    }
+
+                    return 00; // Retorna 00 si se eliminó el nodo
+
+                } else {
+                    return -1; // Retorna -1 si no se encontró el nodo a eliminar
+                }
+
+            }
+        } else {
+            return -2; // Retorna -2 si la lista está vacía
+        }
+        return 00; // Retorna 00 si eliminó el nodo
+    }
 }
